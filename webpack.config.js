@@ -5,7 +5,6 @@ const postCSSPlugins = [
     require('postcss-simple-vars'),
     require('postcss-nested'),
     require('autoprefixer'),
-    require('browser-sync')
 ]
 
 module.exports = {
