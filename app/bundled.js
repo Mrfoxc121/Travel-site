@@ -26,7 +26,17 @@ eval("module.exports = __webpack_require__.p + \"b8a3023904d43d8fc1f9.jpg\";\n\n
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.css */ \"./app/assets/styles/styles.css\");\n\n\nif (false) {}\n\n//# sourceURL=webpack://travel-site/./app/assets/scripts/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.css */ \"./app/assets/styles/styles.css\");\n/* harmony import */ var _modules_Person__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Person */ \"./app/assets/scripts/modules/Person.js\");\n \n \n\n if (false) {}\n\n //  lesson example code below this line\n\n class Adult extends _modules_Person__WEBPACK_IMPORTED_MODULE_1__.default {\n     payTaxes() {\n         console.log(`${this.name} now owes zero taxes.`)\n     }\n }\n\n let John = new _modules_Person__WEBPACK_IMPORTED_MODULE_1__.default('John Doe', 'red');\n John.greet();\n let Jane = new Adult('Jane Smith', 'yellow');\n Jane.greet();\n Jane.payTaxes();\n\n//# sourceURL=webpack://travel-site/./app/assets/scripts/app.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/Person.js":
+/*!**********************************************!*\
+  !*** ./app/assets/scripts/modules/Person.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Constructor function\n\n// function Person(fullName, faveColor) {\n//     this.name = fullName;\n//     this.favoriteColor = faveColor;\n//     this.greet = function() {\n//         console.log(`Hello my name is ${this.name} and my favorite colour is ${this.favoriteColor}`);\n//     }\n// }\n\nclass Person {\n    constructor(name, favoriteColor) {\n        this.name = name;\n        this.favoriteColor = favoriteColor;\n    }\n    greet() {\n        console.log(`Hello my name is ${this.name} and my favorite colour is ${this.favoriteColor}`);\n    }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Person);\n\n//# sourceURL=webpack://travel-site/./app/assets/scripts/modules/Person.js?");
 
 /***/ }),
 
