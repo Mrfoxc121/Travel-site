@@ -17,11 +17,10 @@
         list-style: none;
         display: inline-block;
         padding-right: 7px;
-        padding-top: 12px;
         @mixin atMedium {
             padding-right: 20px;
             float: left;
-            display: black;
+            display: block;
         }
     }
     li:last-child {
@@ -31,17 +30,20 @@
         }
     }
     a {
-        text-decoration: none;
-        color: #fff;
-        font-size: .8rem;
+        color: #FFF;
         font-weight: 300;
+        text-decoration: none;
         display: block;
         padding: 5px 8px;
-        background-color: rgba(#2f5572, .7);
+        font-size: .8rem;
+        background-color: rgba($mainBlue, .5);
         @mixin atMedium {
-            padding: 12px 0;
             font-size: 1rem;
+            padding: 12px 0;
             background-color: transparent;
+            &.is-current-link {
+                color: #fabb69;
+            }
         }
     }
 }

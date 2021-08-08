@@ -2,8 +2,8 @@ import throttle from 'lodash/throttle'
 import debounce from 'lodash/debounce'
 
 class RevealOnScroll {
-    constructor(els, threshholdPerscent) {
-        this.threshholdPerscent = threshholdPerscent
+    constructor(els, thresholdPercent) {
+        this.thresholdPercent = thresholdPercent
         this.itemsToReveal = els
         this.browserHeight = window.innerHeight
         this.hideInitially()
@@ -12,15 +12,15 @@ class RevealOnScroll {
     }
 
     events() {
-        window.addEventListener('scroll', this.scrollThrottle)
-        window.addEventListener('resize', debounce(() => {
-            console.log('resize just ran')
+        window.addEventListener("scroll", this.scrollThrottle)
+        window.addEventListener("resize", debounce(() => {
+            console.log("Resize just ran")
             this.browserHeight = window.innerHeight
         }, 333))
     }
 
     calcCaller() {
-        console.log('scroll function ran')
+        console.log("Scroll function ran")
         this.itemsToReveal.forEach(el => {
             if (el.isRevealed == false) {
                 this.calculateIfScrolledTo(el)
@@ -30,13 +30,13 @@ class RevealOnScroll {
 
     calculateIfScrolledTo(el) {
         if (window.scrollY + this.browserHeight > el.offsetTop) {
-            console.log('element was calculated')
+            console.log("Element was calculated")
             let scrollPercent = (el.getBoundingClientRect().top / this.browserHeight) * 100
-            if (scrollPercent < this.threshholdPerscent) {
-                el.classList.add('reveal-item--is-visible')
+            if (scrollPercent < this.thresholdPercent) {
+                el.classList.add("reveal-item--is-visible")
                 el.isRevealed = true
                 if (el.isLastItem) {
-                    window.removeEventListener('scroll', this.scrollThrottle)
+                    window.removeEventListener("scroll", this.scrollThrottle)
                 }
             }
         }
@@ -44,10 +44,11 @@ class RevealOnScroll {
 
     hideInitially() {
         this.itemsToReveal.forEach(el => {
-            el.classList.add('reveal-item')
+            el.classList.add("reveal-item")
             el.isRevealed = false
         })
         this.itemsToReveal[this.itemsToReveal.length - 1].isLastItem = true
     }
 }
-export default RevealOnScroll;
+
+export default RevealOnScroll
